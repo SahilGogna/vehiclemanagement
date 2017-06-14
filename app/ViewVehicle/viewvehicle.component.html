@@ -1,0 +1,43 @@
+<div class="container" >
+ <div class="row">
+      <span class="title">
+              <h3 class="text-center login-title">Here are the details of requested vehicle</h3>
+            </span>
+    <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="account-wall">
+                        <form>
+
+                        <label for="userfirstname">First Name</label>
+                        <input class="form-control" id="userfirstname" [(ngModel)]="userfirstname" name="userfirstname"
+                            type="text" disabled>
+                            
+                        <label for="userlastname">Last Name</label>
+                        <input class="form-control" [(ngModel)]="userlastname" name="userlastname"
+                            type="text" disabled>
+                        
+                        <label for="registrationNumber">Registration Number</label>
+                        <input  class="form-control" [(ngModel)]="registrationNumber" name="registrationNumber"
+                            type="text" disabled>
+
+                        <label for="address">Address</label>
+                        <input class="form-control" [(ngModel)]="address" name="address"
+                            type="text" disabled>
+                        
+                        <label for="pickupdate">Pickup Date</label>
+                        <input class="form-control" [(ngModel)]="pickupdate" name="pickupdate"
+                            type="date" disabled>
+
+                        <label for="returndate">Return Date</label>
+                        <input class="form-control" [(ngModel)]="returndate" name="returndate"
+                            type="date" disabled> 
+                        <input type="button" value="Back" [routerLink]="['/list']" class="btn btn-lg btn-primary btn-block btn-signin"
+						class="text-center login-title" class="btn" style="margin-top: 20px;margin-left:150px">
+                      
+                    </form>    
+                    </div>    
+                </div>
+            </div>
+            </div>
+        </div>

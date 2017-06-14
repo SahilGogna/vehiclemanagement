@@ -1,0 +1,61 @@
+<!-- this view appears when user clicks add new vehicle button-->
+<div class="container" >
+ <div class="row">
+      <span class="title">
+              <h3 class="text-center login-title">Please Fill this form to add vehicle details</h3>
+            </span>
+    <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="account-wall">
+                        <form (ngSubmit) = "AddVehicle()"  class="form-signin">
+
+                        <label for="userfirstname">First Name</label>
+                        <input class="form-control" id="userfirstname" [(ngModel)]="userfirstname" name="userfirstname"
+                            type="text" [minLength]="1" [maxLength]="10" required #fn=ngModel>
+                            
+                        <div *ngIf="fn.errors && (fn.dirty || fn.touched)"
+					    class="alert alert-danger">
+                        <div [hidden]="!fn.errors.required">First Name must contains 1 - 10 characters</div>
+				        </div> 
+
+                            
+                        <label for="userlastname">Last Name</label>
+                        <input class="form-control" [(ngModel)]="userlastname" name="userlastname"
+                            type="text" [minLength]="1" [maxLength]="10" required #ln=ngModel required>
+                        <div *ngIf="ln.errors && (ln.dirty || ln.touched)"
+					    class="alert alert-danger">
+                        <div [hidden]="!ln.errors.required">Last Name must contains 1 - 10 characters</div>
+				        </div>
+                        
+                        <label for="registrationNumber">Registration Number</label>
+                        <input  class="form-control" [(ngModel)]="registrationNumber" name="registrationNumber"
+                            type="number" required>
+
+                        <label for="address">Address</label>
+                        <input class="form-control" [(ngModel)]="address" name="address"
+                            type="text" required="required">
+                        
+                        <label for="pickupdate">Pickup Date</label>
+                        <input class="form-control" [(ngModel)]="pickupdate" name="pickupdate"
+                            type="date" required>
+
+                        <label for="returndate">Return Date</label>
+                        <input class="form-control" [(ngModel)]="returndate" name="returndate"
+                            type="date" required>
+
+                        <span>{{errorMsg}}</span>
+                        <span>
+                        <input type="submit" class="btn btn-lg btn-primary btn-block btn-signin"
+						class="text-center login-title" class="btn" style="margin-top: 20px;margin-left:100px">
+                        </span>
+                         <span>  
+                        <input type="button" value="Back" [routerLink]="['/vehicleList']" class="btn btn-lg btn-primary btn-block btn-signin"
+						class="text-center login-title" class="btn" style="margin-top: -55px;margin-left:190px">
+                      </span>
+                    </form>    
+                    </div>    
+                </div>
+            </div>
+            </div>
+        </div>

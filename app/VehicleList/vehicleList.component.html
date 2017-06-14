@@ -1,0 +1,31 @@
+<!-- this file contains the list view that is shown to the user-->
+<div class='panel-primary'>
+    <div class='panel-heading'>
+       {{pageTitle}}
+    </div>
+    
+    <span>
+        <input type="button" value="Add New Request" [routerLink]="['/add']"> 
+        <input type="button" value="Undo" (click)='undo()'>
+    </span>
+   
+    <div class='table-responsive'>
+        <table class='table' *ngIf='vehicles && vehicles.length'>
+            <thead>
+                <tr>
+                    <th>Customer Full Name</th>
+                    <th>Vehicle Registration Number</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let vehicle of vehicles'>
+                    <td>{{vehicle.userfirstname}} {{vehicle.userlastname}}</td>
+                    <td>{{vehicle.registrationNumber}}</td>
+                   <td><a [routerLink]="['/vehicle',vehicle.registrationNumber]">View</a>
+                  <a [routerLink]="['/deletevehicle',vehicle.registrationNumber]"> Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
